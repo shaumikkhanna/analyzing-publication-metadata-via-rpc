@@ -88,7 +88,7 @@ if __name__ == "__main__":
             chunk.append(f"pub_{file_number}.txt")
         chunks.append(chunk)
 
-    with Pool(processes=5) as pool:
+    with Pool(processes=cpu_count()) as pool:
         results = pool.map(mapper, chunks)
 
     c = Counter()
